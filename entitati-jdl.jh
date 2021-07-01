@@ -1,0 +1,47 @@
+entity Specializare {
+	denumire String required maxlength(80)
+}
+
+entity Grad{
+    denumire String required maxlength(30)
+}
+
+entity Medic{
+    numeSiPrenume String required maxlength(100)
+}
+
+entity Client{
+    numeSiPrenume String required maxlength(100),
+	dataNastere  Instant,
+	adresa String required maxlength(100),
+	telefon String required minlength(10),
+	email String required maxlength(50)
+}
+
+entity Consultatie {
+	dataOra Instant required,
+	descriere String required maxlength(30)
+}
+
+entity ConcluziiConsultatie {
+	diagnostic String required maxlength(255),
+	tratament String required maxlength(255),
+	observatii String required maxlength(255),
+	controlUrmator String required maxlength(30)
+}
+
+relationship ManyToOne {
+   Medic {grad(denumire)} to Grad,
+   Medic {specializare(denumire)} to Specializare,
+   Consultatie {medic(numeSiPrenume)} to Medic,
+   Consultatie {client(numeSiPrenume)} to Client,
+}
+
+
+relationship OneToOne {
+   Medic {user(login)} to User,
+   Client {user(login)} to User,
+   ConcluziiConsultatie {consultatie} to Consultatie
+}
+
+paginate * with pagination

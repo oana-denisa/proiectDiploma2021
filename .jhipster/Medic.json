@@ -1,0 +1,45 @@
+{
+  "name": "Medic",
+  "fields": [
+    {
+      "fieldName": "numeSiPrenume",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "maxlength"],
+      "fieldValidateRulesMaxlength": "100"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "user",
+      "otherEntityRelationshipName": "medic",
+      "relationshipName": "user",
+      "otherEntityField": "login",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "grad",
+      "otherEntityRelationshipName": "medic",
+      "relationshipName": "grad",
+      "otherEntityField": "denumire"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "specializare",
+      "otherEntityRelationshipName": "medic",
+      "relationshipName": "specializare",
+      "otherEntityField": "denumire"
+    }
+  ],
+  "entityTableName": "medic",
+  "dto": "no",
+  "pagination": "pagination",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "changelogDate": "20210630163834"
+}

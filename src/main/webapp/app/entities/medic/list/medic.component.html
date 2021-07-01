@@ -1,0 +1,123 @@
+<div>
+  <h2 id="page-heading" data-cy="MedicHeading">
+    <span jhiTranslate="consultatiiApp.medic.home.title">Medics</span>
+
+    <div class="d-flex justify-content-end">
+      <button class="btn btn-info mr-2" (click)="loadPage()" [disabled]="isLoading">
+        <fa-icon icon="sync" [spin]="isLoading"></fa-icon>
+        <span jhiTranslate="consultatiiApp.medic.home.refreshListLabel">Refresh List</span>
+      </button>
+
+      <button
+        *jhiHasAnyAuthority="'ROLE_ADMIN'"
+        id="jh-create-entity"
+        data-cy="entityCreateButton"
+        class="btn btn-primary jh-create-entity create-medic"
+        [routerLink]="['/medic/new']"
+      >
+        <fa-icon icon="plus"></fa-icon>
+        <span jhiTranslate="consultatiiApp.medic.home.createLabel"> Create a new Medic </span>
+      </button>
+    </div>
+  </h2>
+
+  <jhi-alert-error></jhi-alert-error>
+
+  <jhi-alert></jhi-alert>
+
+  <div class="alert alert-warning" id="no-result" *ngIf="medics?.length === 0">
+    <span jhiTranslate="consultatiiApp.medic.home.notFound">No medics found</span>
+  </div>
+
+  <div class="table-responsive" id="entities" *ngIf="medics && medics.length > 0">
+    <table class="table table-striped" aria-describedby="page-heading">
+      <thead>
+        <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" [callback]="loadPage.bind(this)">
+          <th scope="col" jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="numeSiPrenume">
+            <span jhiTranslate="consultatiiApp.medic.numeSiPrenume">Nume Si Prenume</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="user.login">
+            <span jhiTranslate="consultatiiApp.medic.user">User</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="grad.denumire">
+            <span jhiTranslate="consultatiiApp.medic.grad">Grad</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="specializare.denumire">
+            <span jhiTranslate="consultatiiApp.medic.specializare">Specializare</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let medic of medics; trackBy: trackId" data-cy="entityTable">
+          <td>
+            <a [routerLink]="['/medic', medic.id, 'view']">{{ medic.id }}</a>
+          </td>
+          <td>{{ medic.numeSiPrenume }}</td>
+          <td>
+            {{ medic.user?.login }}
+          </td>
+          <td>
+            <div *ngIf="medic.grad">
+              <a [routerLink]="['/grad', medic.grad?.id, 'view']">{{ medic.grad?.denumire }}</a>
+            </div>
+          </td>
+          <td>
+            <div *ngIf="medic.specializare">
+              <a [routerLink]="['/specializare', medic.specializare?.id, 'view']">{{ medic.specializare?.denumire }}</a>
+            </div>
+          </td>
+          <td class="text-right">
+            <div class="btn-group">
+              <button type="submit" [routerLink]="['/medic', medic.id, 'view']" class="btn btn-info btn-sm" data-cy="entityDetailsButton">
+                <fa-icon icon="eye"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+              </button>
+
+              <button
+                *jhiHasAnyAuthority="'ROLE_ADMIN'"
+                type="submit"
+                [routerLink]="['/medic', medic.id, 'edit']"
+                class="btn btn-primary btn-sm"
+                data-cy="entityEditButton"
+              >
+                <fa-icon icon="pencil-alt"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+              </button>
+
+              <button
+                *jhiHasAnyAuthority="'ROLE_ADMIN'"
+                type="submit"
+                (click)="delete(medic)"
+                class="btn btn-danger btn-sm"
+                data-cy="entityDeleteButton"
+              >
+                <fa-icon icon="times"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+              </button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div *ngIf="medics && medics.length > 0">
+    <div class="row justify-content-center">
+      <jhi-item-count [params]="{ page: page, totalItems: totalItems, itemsPerPage: itemsPerPage }"></jhi-item-count>
+    </div>
+
+    <div class="row justify-content-center">
+      <ngb-pagination
+        [collectionSize]="totalItems"
+        [(page)]="ngbPaginationPage"
+        [pageSize]="itemsPerPage"
+        [maxSize]="5"
+        [rotate]="true"
+        [boundaryLinks]="true"
+        (pageChange)="loadPage($event)"
+      ></ngb-pagination>
+    </div>
+  </div>
+</div>

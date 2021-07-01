@@ -1,0 +1,24 @@
+{
+  "consultatiiApp": {
+    "specializare": {
+      "home": {
+        "title": "Specializares",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Creeare o nouă entitate Specializare",
+        "createOrEditLabel": "Creeare sau editare Specializare",
+        "notFound": "No Specializares found"
+      },
+      "created": "A fost creată o nouă entitate Specializare cu identificatorul {{ param }}",
+      "updated": "Specializare cu identificatorul {{ param }} a fost actualizată",
+      "deleted": "Specializare cu identificatorul {{ param }} a fost ștearsă",
+      "delete": {
+        "question": "Sunteți sigur că doriți să ștergeți Specializare {{ id }}?"
+      },
+      "detail": {
+        "title": "Specializare"
+      },
+      "id": "ID",
+      "denumire": "Denumire"
+    }
+  }
+}

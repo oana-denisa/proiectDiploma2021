@@ -1,0 +1,52 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <div *ngIf="client">
+      <h2 data-cy="clientDetailsHeading"><span jhiTranslate="consultatiiApp.client.detail.title">Client</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ client.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="consultatiiApp.client.numeSiPrenume">Nume Si Prenume</span></dt>
+        <dd>
+          <span>{{ client.numeSiPrenume }}</span>
+        </dd>
+        <dt><span jhiTranslate="consultatiiApp.client.dataNastere">Data Nastere</span></dt>
+        <dd>
+          <span>{{ client.dataNastere | formatMediumDatetime }}</span>
+        </dd>
+        <dt><span jhiTranslate="consultatiiApp.client.adresa">Adresa</span></dt>
+        <dd>
+          <span>{{ client.adresa }}</span>
+        </dd>
+        <dt><span jhiTranslate="consultatiiApp.client.telefon">Telefon</span></dt>
+        <dd>
+          <span>{{ client.telefon }}</span>
+        </dd>
+        <dt><span jhiTranslate="consultatiiApp.client.email">Email</span></dt>
+        <dd>
+          <span>{{ client.email }}</span>
+        </dd>
+        <dt><span jhiTranslate="consultatiiApp.client.user">User</span></dt>
+        <dd>
+          <span>{{ client.user?.login }}</span>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button *jhiHasAnyAuthority="'ROLE_ADMIN'" type="button" [routerLink]="['/client', client.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,24 @@
+{
+  "consultatiiApp": {
+    "grad": {
+      "home": {
+        "title": "Grads",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Creeare o nouă entitate Grad",
+        "createOrEditLabel": "Creeare sau editare Grad",
+        "notFound": "No Grads found"
+      },
+      "created": "A fost creată o nouă entitate Grad cu identificatorul {{ param }}",
+      "updated": "Grad cu identificatorul {{ param }} a fost actualizată",
+      "deleted": "Grad cu identificatorul {{ param }} a fost ștearsă",
+      "delete": {
+        "question": "Sunteți sigur că doriți să ștergeți Grad {{ id }}?"
+      },
+      "detail": {
+        "title": "Grad"
+      },
+      "id": "ID",
+      "denumire": "Denumire"
+    }
+  }
+}

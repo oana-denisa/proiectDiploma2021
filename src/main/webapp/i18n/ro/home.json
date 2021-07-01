@@ -1,7 +1,10 @@
 {
   "home": {
-    "title": "Bun venit, Java Hipster!",
+    "title": "Bun venit!",
     "subtitle": "Aceasta este pagina ta de start",
+    "paragraf1": "Platforma web numita HealthForYou este destinata programarilor consultatiilor medicale din cadrul unei policlinici. Este creata pentru a facilita organizarea consultatiilor. Aici sunt inregistrati toti medicii angajati cu gradele si specializarile respective. Persoanele de la receptie creeaza conturi pentru clienti, inregistrari cu detalii despre acestia, programarile pentru data si medicul ales. In urma unei consultatii sau a unui control vor fi incarcate si concluziile aferente cu tratamentul si observatiile corespunzatoare.",
+    "paragraf2": "Orice client isi poate vedea datele, medicii disponibili, programarile proprii sau concluziile acestora. De asemenea, platforma este utilizata si de catre medici. Acestia pot avea acces oricand la consultatiile pe care le au.",
+    "paragraf3": "O programare la unul din medici se face apeland la receptia policlinicii. De aici se va crea un cont cu adresa de e-mail, in cazul in care clientul este nou si nu are unul creat. Dupa ce datele sunt inregistrate se va crea consultatia la ora dorita de catre client. El va primi, la adresa de e-mail specificata, un link pentru alegerea parolei contului. Ulterior se va putea autentifica pe platforma pentru a putea vizualiza programarile personale si concluziile medicului. Pentru a reduce timpul de asteptare din cadrul realizarii unei programari, clintul isi poate inregistra singur un cont pe platforma. Dupa activarea acestuia poate face apel catre receptia policlinicii.",
     "logged": {
       "message": "Ești autentificat cu numele de utilizator \"{{username}}\"."
     },

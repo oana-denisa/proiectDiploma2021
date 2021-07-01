@@ -41,6 +41,8 @@
     "jwtSecretKey": "ODJlZjdiZjQyOTNkZGMzMTA0ZDUwZjIxNDkxZDZmYzllNTc0MjQ3OGU1NDE0YjM1YjM0NWJjYjY4ZWVkNzVjZjc5MTFkOGQ0ZmQyNDkyNDYxOWJmNDRjMTc4YTY0ZWM1NzgzNTI5MzUxMDM4NzMyZDgyNGJhNjQzMjI0NDgwOGI=",
     "clientPackageManager": "npm",
     "clientThemeVariant": "",
-    "languages": ["ro", "en"]
+    "languages": ["ro", "en"],
+    "entities": ["Specializare", "Grad", "Medic", "Client", "Consultatie", "ConcluziiConsultatie"],
+    "lastLiquibaseTimestamp": 1625071117000
   }
 }

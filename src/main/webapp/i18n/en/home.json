@@ -1,7 +1,10 @@
 {
   "home": {
-    "title": "Welcome, Java Hipster!",
+    "title": "Welcome!",
     "subtitle": "This is your homepage",
+    "paragraf1": "This web platform nemed HealthForYou is intended for scheduling medical consultations in a polyclinic. It is created to facilitate the organization of consultation. Here are registered all the doctors employed with the respective degrees and specializations.The people at the reception create accounts for clients, registrations with details about them, appointments for the date and the chosen doctor. After a consultation or a control, the conclusions related to the corresponding treatment and observations will be uploaded.",
+    "paragraf2": "Any client can see their data, available doctors, their own appointments or their conclusions. The platform is also used by doctors. They can have access to the consultations they have at any time.",
+    "paragraf3": "An appointment with one of the doctors is made by calling the reception of the polyclinic. From here an account will be created with the e-mail address, in case the client is new and does not have one created. After the data is registered, the consultation will be created at the time chosen by the client. He will receive, at the specified e-mail address, a link to choose the account password. after that, he will be able to authenticate on the platform in order to be able to view the personal appointments and the conclusions of the doctor. To reduce the waiting time during the creation of an appointment, the client can register an account on the platform alone. After activating it, he can appeal to the reception of the polyclinic.",
     "logged": {
       "message": "You are logged in as user \"{{username}}\"."
     },

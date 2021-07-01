@@ -1,0 +1,48 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <div *ngIf="medic">
+      <h2 data-cy="medicDetailsHeading"><span jhiTranslate="consultatiiApp.medic.detail.title">Medic</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ medic.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="consultatiiApp.medic.numeSiPrenume">Nume Si Prenume</span></dt>
+        <dd>
+          <span>{{ medic.numeSiPrenume }}</span>
+        </dd>
+        <dt><span jhiTranslate="consultatiiApp.medic.user">User</span></dt>
+        <dd>
+          <span>{{ medic.user?.login }}</span>
+        </dd>
+        <dt><span jhiTranslate="consultatiiApp.medic.grad">Grad</span></dt>
+        <dd>
+          <div *ngIf="medic.grad">
+            <a [routerLink]="['/grad', medic.grad?.id, 'view']">{{ medic.grad?.denumire }}</a>
+          </div>
+        </dd>
+        <dt><span jhiTranslate="consultatiiApp.medic.specializare">Specializare</span></dt>
+        <dd>
+          <div *ngIf="medic.specializare">
+            <a [routerLink]="['/specializare', medic.specializare?.id, 'view']">{{ medic.specializare?.denumire }}</a>
+          </div>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button *jhiHasAnyAuthority="'ROLE_ADMIN'" type="button" [routerLink]="['/medic', medic.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

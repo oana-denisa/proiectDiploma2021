@@ -1,0 +1,57 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <div *ngIf="concluziiConsultatie">
+      <h2 data-cy="concluziiConsultatieDetailsHeading">
+        <span jhiTranslate="consultatiiApp.concluziiConsultatie.detail.title">Concluzii Consultatie</span>
+      </h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ concluziiConsultatie.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="consultatiiApp.concluziiConsultatie.diagnostic">Diagnostic</span></dt>
+        <dd>
+          <span>{{ concluziiConsultatie.diagnostic }}</span>
+        </dd>
+        <dt><span jhiTranslate="consultatiiApp.concluziiConsultatie.tratament">Tratament</span></dt>
+        <dd>
+          <span>{{ concluziiConsultatie.tratament }}</span>
+        </dd>
+        <dt><span jhiTranslate="consultatiiApp.concluziiConsultatie.observatii">Observatii</span></dt>
+        <dd>
+          <span>{{ concluziiConsultatie.observatii }}</span>
+        </dd>
+        <dt><span jhiTranslate="consultatiiApp.concluziiConsultatie.controlUrmator">Control Urmator</span></dt>
+        <dd>
+          <span>{{ concluziiConsultatie.controlUrmator }}</span>
+        </dd>
+        <dt><span jhiTranslate="consultatiiApp.concluziiConsultatie.consultatie">Consultatie</span></dt>
+        <dd>
+          <div *ngIf="concluziiConsultatie.consultatie">
+            <a [routerLink]="['/consultatie', concluziiConsultatie.consultatie?.id, 'view']">{{ concluziiConsultatie.consultatie?.id }}</a>
+          </div>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button
+        *jhiHasAnyAuthority="'ROLE_ADMIN'"
+        type="button"
+        [routerLink]="['/concluzii-consultatie', concluziiConsultatie.id, 'edit']"
+        class="btn btn-primary"
+      >
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

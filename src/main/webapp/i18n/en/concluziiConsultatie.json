@@ -1,0 +1,28 @@
+{
+  "consultatiiApp": {
+    "concluziiConsultatie": {
+      "home": {
+        "title": "Concluzii Consultaties",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Concluzii Consultatie",
+        "createOrEditLabel": "Create or edit a Concluzii Consultatie",
+        "notFound": "No Concluzii Consultaties found"
+      },
+      "created": "A new Concluzii Consultatie is created with identifier {{ param }}",
+      "updated": "A Concluzii Consultatie is updated with identifier {{ param }}",
+      "deleted": "A Concluzii Consultatie is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Concluzii Consultatie {{ id }}?"
+      },
+      "detail": {
+        "title": "Concluzii Consultatie"
+      },
+      "id": "ID",
+      "diagnostic": "Diagnostic",
+      "tratament": "Tratament",
+      "observatii": "Observatii",
+      "controlUrmator": "Control Urmator",
+      "consultatie": "Consultatie"
+    }
+  }
+}

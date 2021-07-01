@@ -1,0 +1,42 @@
+{
+  "name": "Consultatie",
+  "fields": [
+    {
+      "fieldName": "dataOra",
+      "fieldType": "Instant",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "descriere",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "maxlength"],
+      "fieldValidateRulesMaxlength": "30"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "medic",
+      "otherEntityRelationshipName": "consultatie",
+      "relationshipName": "medic",
+      "otherEntityField": "numeSiPrenume"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "client",
+      "otherEntityRelationshipName": "consultatie",
+      "relationshipName": "client",
+      "otherEntityField": "numeSiPrenume"
+    }
+  ],
+  "entityTableName": "consultatie",
+  "dto": "no",
+  "pagination": "pagination",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "changelogDate": "20210630163836"
+}

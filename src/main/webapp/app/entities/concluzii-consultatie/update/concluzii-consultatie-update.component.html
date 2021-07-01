@@ -1,0 +1,177 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2
+        id="jhi-concluzii-consultatie-heading"
+        data-cy="ConcluziiConsultatieCreateUpdateHeading"
+        jhiTranslate="consultatiiApp.concluziiConsultatie.home.createOrEditLabel"
+      >
+        Create or edit a Concluzii Consultatie
+      </h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        <div class="form-group" [hidden]="editForm.get('id')!.value == null">
+          <label class="form-control-label" jhiTranslate="global.field.id" for="field_id">ID</label>
+          <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="consultatiiApp.concluziiConsultatie.diagnostic" for="field_diagnostic"
+            >Diagnostic</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="diagnostic"
+            id="field_diagnostic"
+            data-cy="diagnostic"
+            formControlName="diagnostic"
+          />
+          <div *ngIf="editForm.get('diagnostic')!.invalid && (editForm.get('diagnostic')!.dirty || editForm.get('diagnostic')!.touched)">
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('diagnostic')?.errors?.required"
+              jhiTranslate="entity.validation.required"
+            >
+              This field is required.
+            </small>
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('diagnostic')?.errors?.maxlength"
+              jhiTranslate="entity.validation.maxlength"
+              [translateValues]="{ max: 255 }"
+            >
+              This field cannot be longer than 255 characters.
+            </small>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="consultatiiApp.concluziiConsultatie.tratament" for="field_tratament"
+            >Tratament</label
+          >
+          <input type="text" class="form-control" name="tratament" id="field_tratament" data-cy="tratament" formControlName="tratament" />
+          <div *ngIf="editForm.get('tratament')!.invalid && (editForm.get('tratament')!.dirty || editForm.get('tratament')!.touched)">
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('tratament')?.errors?.required"
+              jhiTranslate="entity.validation.required"
+            >
+              This field is required.
+            </small>
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('tratament')?.errors?.maxlength"
+              jhiTranslate="entity.validation.maxlength"
+              [translateValues]="{ max: 255 }"
+            >
+              This field cannot be longer than 255 characters.
+            </small>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="consultatiiApp.concluziiConsultatie.observatii" for="field_observatii"
+            >Observatii</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="observatii"
+            id="field_observatii"
+            data-cy="observatii"
+            formControlName="observatii"
+          />
+          <div *ngIf="editForm.get('observatii')!.invalid && (editForm.get('observatii')!.dirty || editForm.get('observatii')!.touched)">
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('observatii')?.errors?.required"
+              jhiTranslate="entity.validation.required"
+            >
+              This field is required.
+            </small>
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('observatii')?.errors?.maxlength"
+              jhiTranslate="entity.validation.maxlength"
+              [translateValues]="{ max: 255 }"
+            >
+              This field cannot be longer than 255 characters.
+            </small>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="consultatiiApp.concluziiConsultatie.controlUrmator" for="field_controlUrmator"
+            >Control Urmator</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="controlUrmator"
+            id="field_controlUrmator"
+            data-cy="controlUrmator"
+            formControlName="controlUrmator"
+          />
+          <div
+            *ngIf="
+              editForm.get('controlUrmator')!.invalid && (editForm.get('controlUrmator')!.dirty || editForm.get('controlUrmator')!.touched)
+            "
+          >
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('controlUrmator')?.errors?.required"
+              jhiTranslate="entity.validation.required"
+            >
+              This field is required.
+            </small>
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('controlUrmator')?.errors?.maxlength"
+              jhiTranslate="entity.validation.maxlength"
+              [translateValues]="{ max: 30 }"
+            >
+              This field cannot be longer than 30 characters.
+            </small>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="consultatiiApp.concluziiConsultatie.consultatie" for="field_consultatie"
+            >Consultatie</label
+          >
+          <select class="form-control" id="field_consultatie" data-cy="consultatie" name="consultatie" formControlName="consultatie">
+            <option [ngValue]="null"></option>
+            <option
+              [ngValue]="
+                consultatieOption.id === editForm.get('consultatie')!.value?.id ? editForm.get('consultatie')!.value : consultatieOption
+              "
+              *ngFor="let consultatieOption of consultatiesCollection; trackBy: trackConsultatieById"
+            >
+              {{ consultatieOption.id }}
+            </option>
+          </select>
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+
+        <button
+          *jhiHasAnyAuthority="'ROLE_ADMIN'"
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

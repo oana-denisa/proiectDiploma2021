@@ -1,6 +1,6 @@
 {
   "global": {
-    "title": "Consultatii",
+    "title": "HealthForYou",
     "browsehappy": "Folosiți un browser <strong>vechi</strong>. Va rugăm <a href=\"http://browsehappy.com/?locale=en\"> să îl actualizați</a> pentru o experiență îmbunătațită.",
     "menu": {
       "home": "Acasă",
@@ -10,6 +10,12 @@
         "bankAccount": "ContBancar",
         "label": "Etichetă",
         "operation": "Operație",
+        "specializare": "Specializare",
+        "grad": "Grad",
+        "medic": "Medic",
+        "client": "Client",
+        "consultatie": "Consultatie",
+        "concluziiConsultatie": "Concluzii Consultatie",
         "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
       },
       "account": {
@@ -145,5 +151,5 @@
       "not.image": "File was expected to be an image but was found to be \"{{ fileType }}\""
     }
   },
-  "footer": "Acesta este subsolul paginii dumneavoastră"
+  "footer": "Sararu Oana-Denisa - Universitatea Politehnica din Bucuresti - 2021"
 }
