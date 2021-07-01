@@ -202,7 +202,7 @@ public class ConcluziiConsultatieResource {
             HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(ServletUriComponentsBuilder.fromCurrentRequest(), page);
             return ResponseEntity.ok().headers(headers).body(page.getContent());
         } else {
-            Page<ConcluziiConsultatie> page = concluziiConsultatieRepository.findByUserIsCurrentUser(pageable);
+            Page<ConcluziiConsultatie> page = concluziiConsultatieRepository.findByClientIsCurrentClient(pageable);
             HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(ServletUriComponentsBuilder.fromCurrentRequest(), page);
             return ResponseEntity.ok().headers(headers).body(page.getContent());
         }
@@ -234,7 +234,7 @@ public class ConcluziiConsultatieResource {
             Optional<ConcluziiConsultatie> concluziiConsultatie = concluziiConsultatieRepository.findByMedicIsCurrentMedicById(id);
             return ResponseUtil.wrapOrNotFound(concluziiConsultatie);
         } else {
-            Optional<ConcluziiConsultatie> concluziiConsultatie = concluziiConsultatieRepository.findByUserIsCurrentUserById(id);
+            Optional<ConcluziiConsultatie> concluziiConsultatie = concluziiConsultatieRepository.findByClientIsCurrentClientById(id);
             return ResponseUtil.wrapOrNotFound(concluziiConsultatie);
         }
     }
