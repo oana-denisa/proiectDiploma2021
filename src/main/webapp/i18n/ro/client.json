@@ -2,10 +2,10 @@
   "consultatiiApp": {
     "client": {
       "home": {
-        "title": "Clients",
+        "title": "Clienti",
         "refreshListLabel": "Refresh list",
-        "createLabel": "Creeare o nouă entitate Client",
-        "createOrEditLabel": "Creeare sau editare Client",
+        "createLabel": "Creare o nouă entitate Client",
+        "createOrEditLabel": "Creare sau editare Client",
         "notFound": "No Clients found"
       },
       "created": "A fost creată o nouă entitate Client cu identificatorul {{ param }}",

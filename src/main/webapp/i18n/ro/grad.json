@@ -2,10 +2,10 @@
   "consultatiiApp": {
     "grad": {
       "home": {
-        "title": "Grads",
+        "title": "Grade",
         "refreshListLabel": "Refresh list",
-        "createLabel": "Creeare o nouă entitate Grad",
-        "createOrEditLabel": "Creeare sau editare Grad",
+        "createLabel": "Creare o nouă entitate Grad",
+        "createOrEditLabel": "Creare sau editare Grad",
         "notFound": "No Grads found"
       },
       "created": "A fost creată o nouă entitate Grad cu identificatorul {{ param }}",

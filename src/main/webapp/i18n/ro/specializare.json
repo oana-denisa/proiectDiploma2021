@@ -2,10 +2,10 @@
   "consultatiiApp": {
     "specializare": {
       "home": {
-        "title": "Specializares",
+        "title": "Specializari",
         "refreshListLabel": "Refresh list",
-        "createLabel": "Creeare o nouă entitate Specializare",
-        "createOrEditLabel": "Creeare sau editare Specializare",
+        "createLabel": "Creare o nouă entitate Specializare",
+        "createOrEditLabel": "Creare sau editare Specializare",
         "notFound": "No Specializares found"
       },
       "created": "A fost creată o nouă entitate Specializare cu identificatorul {{ param }}",

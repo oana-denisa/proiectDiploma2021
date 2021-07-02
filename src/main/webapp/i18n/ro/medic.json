@@ -2,10 +2,10 @@
   "consultatiiApp": {
     "medic": {
       "home": {
-        "title": "Medics",
+        "title": "Medici",
         "refreshListLabel": "Refresh list",
-        "createLabel": "Creeare o nouă entitate Medic",
-        "createOrEditLabel": "Creeare sau editare Medic",
+        "createLabel": "Creare o nouă entitate Medic",
+        "createOrEditLabel": "Creare sau editare Medic",
         "notFound": "No Medics found"
       },
       "created": "A fost creată o nouă entitate Medic cu identificatorul {{ param }}",

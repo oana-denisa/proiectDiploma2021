@@ -2,10 +2,10 @@
   "consultatiiApp": {
     "concluziiConsultatie": {
       "home": {
-        "title": "Concluzii Consultaties",
+        "title": "Concluzii Consultatii",
         "refreshListLabel": "Refresh list",
-        "createLabel": "Creeare o nouă entitate Concluzii Consultatie",
-        "createOrEditLabel": "Creeare sau editare Concluzii Consultatie",
+        "createLabel": "Creare o nouă entitate Concluzii Consultatie",
+        "createOrEditLabel": "Creare sau editare Concluzii Consultatie",
         "notFound": "No Concluzii Consultaties found"
       },
       "created": "A fost creată o nouă entitate Concluzii Consultatie cu identificatorul {{ param }}",

@@ -226,15 +226,8 @@ public class ConsultatieResource {
      *         the consultatie, or with status {@code 404 (Not Found)}.
      */
     @GetMapping("/consultaties/{id}")
-    @PreAuthorize(
-        "hasRole(\"" +
-        AuthoritiesConstants.ADMIN +
-        "\") || hasRole(\"" +
-        AuthoritiesConstants.CLIENT +
-        "\") || hasRole(\"" +
-        AuthoritiesConstants.MEDIC +
-        "\")"
-    )
+    @PreAuthorize( "hasRole(\"" + AuthoritiesConstants.ADMIN + "\") || hasRole(\"" 
+    + AuthoritiesConstants.CLIENT + "\") || hasRole(\"" + AuthoritiesConstants.MEDIC + "\")")
     public ResponseEntity<Consultatie> getConsultatie(@PathVariable Long id) {
         log.debug("REST request to get Consultatie : {}", id);
         if (SecurityUtils.hasCurrentUserThisAuthority(AuthoritiesConstants.ADMIN)) {
